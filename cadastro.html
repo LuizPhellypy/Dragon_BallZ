@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icone -->
+    <link rel="shortcut icon" href="./img/cadastro.png" type="image/x-icon">
+
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- jSuites mascara para input -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsuites/dist/jsuites.min.css" type="text/css" />
+
+</head>
+
+<body>
+
+    <div class="container px-4 my-5">
+        <div class="card">
+            <div class="card-body">
+
+                <form method="post" class="row g-3 needs-validation" novalidate>
+
+                    <!-- Campo do CEP -->
+                    <div class="col-md-4">
+                        <label for="cep" class="form-label">CEP *</label>
+                        <div class="input-group has-validation">
+                            <input type="text" minlength="9" maxlength="9" class="form-control" id="cep" name="cep"
+                                data-mask="00000-000" oninput= "pesquisa();" placeholder="Informe o CEP"
+                                aria-describedby="inputGroupPrepend" required>                          
+                            <div class="valid-feedback">
+                                Informação preenchida com sucesso
+                            </div>
+                            <div class="invalid-feedback">
+                                Informe o CEP completo
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Espaçamento para mudar de linha -->
+                    <div class="col-md-8"></div>
+
+                    <!-- Campo do endereço -->
+                    <div class="col-md-9">
+                        <label for="endereco" class="form-label">Endereço *</label>
+                        <input type="text" maxlength="200" class="form-control" id="endereco" name="endereco" required
+                            placeholder="Informe o Endereço">
+                        <div class="valid-feedback">
+                            Informação preenchida com sucesso
+                        </div>
+                        <div class="invalid-feedback">
+                            Informe o Endereço
+                        </div>
+                    </div>
+
+                    <!-- campo do numero -->
+                    <div class="col-md-3">
+                        <label for="numero" class="form-label">Número *</label>
+                        <input type="number" min="0" class="form-control" id="numero" name="numero" required
+                            placeholder="Informe o Número">
+                        <div class="valid-feedback">
+                            Informação preenchida com sucesso
+                        </div>
+                        <div class="invalid-feedback">
+                            Informe o Número
+                        </div>
+                    </div>
+
+                    <!-- campo do complemento -->
+                    <div class="col-md-5">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" maxlength="50" class="form-control" id="complemento" name="complemento"
+                            placeholder="Informe o Complemento, se necessário">
+                        <div class="valid-feedback">
+                            Complemento não obrigatório
+                        </div>
+                    </div>
+
+                    <!-- campo do bairro -->
+                    <div class="col-md-7">
+                        <label for="bairro" class="form-label">Bairro *</label>
+                        <input type="text" maxlength="70" class="form-control" id="bairro" name="bairro" required
+                            placeholder="Informe o Bairro">
+                        <div class="valid-feedback">
+                            Informação preenchida com sucesso
+                        </div>
+                        <div class="invalid-feedback">
+                            Informe o Bairro
+                        </div>
+                    </div>
+
+                    <!-- campo da cidade -->
+                    <div class="col-md-9">
+                        <label for="cidade" class="form-label">Cidade *</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" required
+                            placeholder="Informe a Cidade">
+                        <div class="valid-feedback">
+                            Informação preenchida com sucesso
+                        </div>
+                        <div class="invalid-feedback">
+                            Informe a Cidade
+                        </div>
+                    </div>
+
+                    <!-- campo do UF -->
+                    <div class="col-md-3">
+                        <label for="uf" class="form-label">UF *</label>
+                        <select class="form-select" id="uf" name="uf" required placeholder="Informe a UF">
+                            <option selected disabled value="">Escolha...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <div class="valid-feedback">
+                            Informação seleciona com sucesso
+                        </div>
+                        <div class="invalid-feedback">
+                            Selecion a UF
+                        </div>
+                    </div>
+
+                    <!-- confirmação  -->
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Concordo em fornecer meus dados
+                            </label>
+                            <div class="valid-feedback">
+                                Informação preenchida com sucesso
+                            </div>
+                            <div class="invalid-feedback">
+                                Marque a opção que concorda com os dados
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- botão de salvar -->
+                    <div class="col">
+                        <button class="btn btn-primary" type="submit">Salvar</button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-secondary" type="reset">Cancelar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <!-- jSuites Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/jsuites/dist/jsuites.min.js"></script>
+
+    <!-- Script VIACEP -->
+    <script src="./js/viacep.js"></script>
+
+    <!-- script validation -->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()</script>
+</body>
+
+</html>
